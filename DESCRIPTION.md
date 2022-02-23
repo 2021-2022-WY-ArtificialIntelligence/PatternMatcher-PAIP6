@@ -102,6 +102,21 @@ Python skills: in order to get this to work you need to know how to
 There are three related repetition matchers: `??` (0 or 1 match), `?*`
 (0 or more matches), and `?+` (1 or more match).
 
+    pat = [["??","A"],"A","B"]
+    tgt1 = ["A","B"]  # yes
+    tgt2 = ["A","A","B"] # yes
+    tgt3 = ["A","A","A","B"] # no
+    tgt4 = ["B","A"] # no
+    tgt5 = ["B","A","B"] # no, must match whole pattern
+
+## Example 7
+
+The 0 or more matches pattern `?*` should be a small step above `??`.
+
+    pat = [["?*","A"],"B"]
+    # Matches tgt1, tgt2, tgt3 above and also
+    tgt6 = ["B"]
+
 
 ## Outline
 
